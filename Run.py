@@ -1,6 +1,7 @@
 import mnist  # Mnist data set loader by Hyeonseok Jung (hsjeong5) https://github.com/hsjeong5/MNIST-for-Numpy
 import ANN
 import numpy as np
+mnist.init()  # download data set and store as .pkl file
 
 x_train, l_train, x_test, l_test = mnist.load()
 n_train = 60000    # number of training examples (max: 60,000)

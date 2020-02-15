@@ -67,7 +67,7 @@ def train(network, x_train, l_train, epochs, learning_rate, batchsize):
     e = 0
     while e < epochs:
         for x_batch, target in zip(x_batchlist, targetlist):
-            layers = [x_batch, 0, 0]
+            layers = [np.random.shuffle(x_batch.T), 0, 0]
             for l in range(len(network)):
                 layers[l + 1] = network[l].feedforward(layers[l], batchsize)
             cost = target - layers[-1]
